@@ -27,30 +27,35 @@ function onSearchBoxInput(e) {
             console.log(data);
 
             if (data.length > 10) {
+                clearEL();
+
                 showMessageNeedMoreDetails();
-            } else {
-               const listC = listCountries(...data);
+
+            } else if (data.length >= 2 && data.length <= 10) {
+                const listC = listCountries(data);
 
                 countryListEl.innerHTML = listC;
-                
-                console.log(listC);
-            };
 
-            if (data.length === 1) {
+            } else if (data.length === 1) {
                 const infoC = countryInfo(data[0]);
 
                 countryInfoEl.innerHTML = infoC;
 
-                console.log(infoC);
+                const listC = listCountries(data);
+                countryListEl.innerHTML = listC;
             };
         })
-        .catch(err => {showMessageCountryIsAbsent()});
+        .catch(err => {
+            clearEL();
+
+            showMessageCountryIsAbsent();
+        });
     }
 }
 
 function clearEL() {
         countryListEl.innerHTML = "";
-        countryInfo.innerHTML = "";
+        countryInfoEl.innerHTML = "";
 }
 
 
