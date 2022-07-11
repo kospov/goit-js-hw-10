@@ -12,5 +12,7 @@
 </p>
 <p>
     <span class = "js-info-item-title">Languages:</span>
-    <span>{{languages}}</span>
+    {{#each languages}}
+    <span class = "js-info-item-text">{{this}}</span>
+    {{/each}}
 </p>

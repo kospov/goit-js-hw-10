@@ -38,3 +38,8 @@ body {
 .js-info-item-title {
   font-weight: 900;
 }
+
+.js-info-item-text:not(:last-child)::after {
+  content: ', ';
+  margin-right: 5px;
+}
