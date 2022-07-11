@@ -1,8 +1,8 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { fetchCountries } from './js/fetchCountries';
-import countryInfo from './templates/country-info.hbs';
-import listCountries from './templates/list-countries.hbs';
+import createCountryInfo from './templates/country-info.hbs';
+import createListCountries from './templates/list-countries.hbs';
 import { showMessageNeedMoreDetails, showMessageCountryIsAbsent } from './js/showMessages';
 
 
@@ -32,18 +32,21 @@ function onSearchBoxInput(e) {
                 showMessageNeedMoreDetails();
 
             } else if (data.length >= 2 && data.length <= 10) {
-                const listC = listCountries(data);
-
-                countryListEl.innerHTML = listC;
+                clearEL();
+                
+                countryListEl.innerHTML = createListCountries(data);;
 
             } else if (data.length === 1) {
-                const infoC = countryInfo(data[0]);
+                clearEL();
 
-                countryInfoEl.innerHTML = infoC;            };
+                countryInfoEl.innerHTML = createCountryInfo(data[0]);
+                
+                console.log(Object.values(data[0].languages).join(', '));
+            };
         })
         .catch(err => {
             console.log(err);
-            
+
             clearEL();
 
             showMessageCountryIsAbsent();
