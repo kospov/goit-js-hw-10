@@ -24,7 +24,7 @@ function onSearchBoxInput(e) {
     } else {
     fetchCountries(name)
         .then(data => {
-            console.log(data);
+            // console.log(data);
 
             if (data.length > 10) {
                 clearEL();
@@ -33,7 +33,7 @@ function onSearchBoxInput(e) {
 
             } else if (data.length >= 2 && data.length <= 10) {
                 clearEL();
-                
+
                 countryListEl.innerHTML = createListCountries(data);;
 
             } else if (data.length === 1) {
@@ -41,7 +41,7 @@ function onSearchBoxInput(e) {
 
                 countryInfoEl.innerHTML = createCountryInfo(data[0]);
                 
-                console.log(Object.values(data[0].languages).join(', '));
+                // console.log(Object.values(data[0].languages).join(', '));
             };
         })
         .catch(err => {
