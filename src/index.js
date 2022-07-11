@@ -24,7 +24,7 @@ function onSearchBoxInput(e) {
     } else {
     fetchCountries(name)
         .then(data => {
-            console.log(data);
+            // console.log(data);
 
             if (data.length > 10) {
                 clearEL();
@@ -40,8 +40,6 @@ function onSearchBoxInput(e) {
                 clearEL();
 
                 console.log(countryInfoEl.innerHTML = createCountryInfo(data[0]));
-                
-                // console.log(Object.values(data[0].languages).join(', '));
             };
         })
         .catch(err => {
@@ -58,10 +56,3 @@ function clearEL() {
         countryListEl.innerHTML = "";
         countryInfoEl.innerHTML = "";
 }
-
-
-
-
-
-
-
