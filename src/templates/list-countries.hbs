@@ -1,8 +1,6 @@
 {{#each this}}
     <li class = "js-list-item">
-        <p>
-            <span class = "js-list-item-flag">{{this.flags.svg}}</span>
-            <spa class = "js-list-item-name">{{this.name.official}}</spa>
-        </p>
+        <img src="{{this.flags.svg}}" alt=`flag of ${{{this.name.official}}}` class="js-img-item">
+        <p>{{this.name.official}}</p>
     </li>
 {{/each}}

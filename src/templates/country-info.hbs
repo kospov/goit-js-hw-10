@@ -1,18 +1,16 @@
-<li class = "js-info-item">
-    <p>
-        <span class = "js-info-item-title">Capital:</span>
-        <span class = "js-info-item-text">{{this.capital}}</span>
-    </p>
-</li>
-<li class = "js-info-item">
-    <p>
-        <span class = "js-info-item-title">Population:</span>
-        <span class = "js-info-item-text">{{this.population}}</span>
-    </p>
-</li>
-<li class = "js-info-item">
-    <p>
-        <span class = "js-info-item-title">Languages:</span>
-        <span class = "js-info-item-text">{{this.languages}}</span>
-    </p>
-</li>
+<h2>
+    <img src="{{this.flags.svg}}" alt=`flag of ${{{this.name.official}}}` width = "35" class = "js-list-img-flag">
+    <spa>{{this.name.official}}</spa>
+</h2>
+<p>
+    <span class = "js-info-item-title">Capital:</span>
+    <span>{{this.capital}}</span>
+</p>
+<p>
+    <span class = "js-info-item-title">Population:</span>
+    <span>{{this.population}}</span>
+</p>
+<p>
+    <span class = "js-info-item-title">Languages:</span>
+    <span>{{this.languages}}</span>
+</p>

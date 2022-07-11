@@ -39,13 +39,11 @@ function onSearchBoxInput(e) {
             } else if (data.length === 1) {
                 const infoC = countryInfo(data[0]);
 
-                countryInfoEl.innerHTML = infoC;
-
-                const listC = listCountries(data);
-                countryListEl.innerHTML = listC;
-            };
+                countryInfoEl.innerHTML = infoC;            };
         })
         .catch(err => {
+            console.log(err);
+            
             clearEL();
 
             showMessageCountryIsAbsent();

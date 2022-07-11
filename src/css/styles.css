@@ -19,19 +19,22 @@ body {
   margin-bottom: 16px;
 }
 
-.country-list {
-  font-display: block;
+.country-list{
+  list-style-position: outside;
+  padding-left: 0;
 }
 
-li {
-  list-style-type: none;
+.js-list-item {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.js-img-item {
+  margin-right: 10px;
+  max-width: 40px;
 }
 
 .js-info-item-title {
-  font-weight: 700;
-}
-
-.js-list-item-name {
-  font-size: 24px;
-  font-weight: 700;
+  font-weight: 900;
 }
